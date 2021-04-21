@@ -4,7 +4,7 @@ import multer from 'multer'
 import fs, { promises as fsPromise } from 'fs'
 import { FormRecognizerClient, AzureKeyCredential } from "@azure/ai-form-recognizer"
 
-const endpoint = "https://lbs-form-recog.cognitiveservices.azure.com/"
+const endpoint = process.env.FORM_RECOG_ENDPOINT
 const apiKey = process.env.FORM_RECOG_API_KEY
 const client = new FormRecognizerClient(endpoint, new AzureKeyCredential(apiKey));
 
